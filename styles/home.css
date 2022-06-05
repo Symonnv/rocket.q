@@ -1,0 +1,67 @@
+.content {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 11.4rem 1fr;
+  grid-template-areas:
+    "top top"
+    "left right";
+}
+
+header {
+  grid-area: top;
+}
+
+header img {
+  cursor: pointer;
+}
+
+aside {
+  grid-area: left;
+  background: url(/assets/bg-image.svg) no-repeat top/contain;
+}
+
+main {
+  grid-area: right;
+
+  display: flex;
+  align-items: center;
+}
+
+main .container {
+  width: min(36.3rem 100%);
+}
+
+main h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: clamp(20px, 5vw, 2.8rem);
+  color: var(--black);
+
+  margin-bottom: 2.4rem;
+}
+
+main input,
+main .button {
+  width: 100%;
+  margin-bottom: 1.8rem;
+}
+
+main hr {
+  border: 0;
+  background-image: linear-gradient(to right, transparent, #ccc, transparent);
+  height: 2px;
+  overflow: visible;
+  padding: 0;
+  color: #ccc;
+  text-align: center;
+}
+
+main hr::after {
+  content: "ou";
+  font-family: "Poppins", sans-serif;
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  padding: 0 0.3em;
+  background: var(--background);
+}

@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* main colors */
+  --black: #0d114f;
+  --white: #fafafa;
+  --red: #e83f5b;
+  --ligth-blue: #e0ecff;
+  --blue: #3485ff;
+  --background: #fbfcff;
+  --overlay: #040911;
+  --icons-details: #a5b0c1;
+  /* gray colors */
+  --gray-dark: #4d5e77;
+  --gray-blue: #a1b2cd;
+  --gray-medium: #d3d9e2;
+  --gray-ligth: #e5eaf1;
+  /* hover colors */
+  --blue-hover: #5699ff;
+  --red-hover: #ea4b65;
+  --gray-hover: #8794a7;
+}
+
+[data-theme="dark"] {
+  --background: #161625;
+  --black: var(--white);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--background);
+}
+
+body,
+button,
+input,
+textarea {
+  font-size: clamp(14px, 1.6rem, 2vw);
+  font-family: "Open Sans", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto;
+}
+header {
+  width: 80%;
+
+  margin-top: 3.5rem;
+  margin-inline: auto;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+
+  width: 16.8rem;
+  height: 4.4rem;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 3.1rem;
+  line-height: 36rem;
+  letter-spacing: -0.08rem;
+  color: var(--black);
+
+  cursor: pointer;
+}
+
+header .logo img{
+  margin-right: 1rem;
+}
+
+header .logo span{
+  color: var(--blue);
+}
+
+.sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+main input {
+  border: 0.2rem solid var(--gray-blue);
+  padding: 0 1.6rem;
+}
+
+main input,
+main .button {
+  height: 5rem;
+
+  border-radius: 0.8rem;
+}
+
+main .button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  line-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+main button.button {
+  border: none;
+
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+main a.button {
+  text-decoration: none;
+
+  border: 2px solid var(--blue);
+
+  background-color: transparent;
+  color: var(--blue);
+}
+
+main .button svg {
+  width: 2rem;
+
+  margin-right: 1rem;
+}
