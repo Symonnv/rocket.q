@@ -1,0 +1,29 @@
+.buttons {
+  display: flex;
+  gap: 0.8rem;
+
+  margin-left: 15%;
+}
+
+.button {
+  height: 4rem;
+  padding-inline: 1rem;
+}
+
+.buttons .button.outlined {
+  border: 2px solid var(--blue);
+
+  background-color: transparent;
+  color: var(--blue);
+}
+
+.buttons .button.outlined svg {
+  width: 2rem;
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+.buttons a.button {
+  background-color: var(--blue);
+  color: var(--white);
+}
