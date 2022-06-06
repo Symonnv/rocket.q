@@ -9,8 +9,8 @@
   --black: #0d114f;
   --white: #fafafa;
   --red: #e83f5b;
-  --ligth-blue: #e0ecff;
   --blue: #3485ff;
+  --ligth-blue: #e0ecff;
   --background: #fbfcff;
   --overlay: #040911;
   --icons-details: #a5b0c1;
@@ -37,6 +37,8 @@ html {
 body {
   height: 100vh;
   background-color: var(--background);
+
+  display: flex;
 }
 
 body,
@@ -79,11 +81,11 @@ header .logo {
   cursor: pointer;
 }
 
-header .logo img{
+header .logo img {
   margin-right: 1rem;
 }
 
-header .logo span{
+header .logo span {
   color: var(--blue);
 }
 
