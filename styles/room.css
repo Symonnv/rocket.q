@@ -1,13 +1,16 @@
+.wrapper-buttons-switch {
+  display: flex;
+  gap: 2rem;
+}
+
 .buttons {
   display: flex;
   gap: 0.8rem;
-
-  margin-left: 15%;
 }
 
 .button {
-  height: 4rem;
-  padding-inline: 1rem;
+  height: 4.3rem;
+  padding-inline: 1.2rem;
 }
 
 .buttons .button.outlined {
@@ -26,4 +29,90 @@
 .buttons a.button {
   background-color: var(--blue);
   color: var(--white);
+}
+
+main {
+  max-width: min(112rem, 84%);
+  margin-inline: auto;
+}
+
+/* Question form */
+#question-form h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 4.2rem;
+  color: var(--black);
+
+  margin-bottom: 2.4rem;
+}
+
+#question-form form {
+  border: 0.2rem solid var(--gray-blue);
+  padding: 1.6rem;
+  border-radius: 0 0.8rem 0.8rem 0.8rem;
+
+  margin-bottom: 1.8rem;
+}
+
+#question-form form textarea {
+  resize: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+#question-form form textarea::placeholder {
+  color: var(--gray-blue);
+}
+
+#question-form form footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#question-form form footer > div {
+  display: flex;
+  gap: 0.6rem;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: var(--icons-details);
+}
+
+#question-form form footer button {
+  padding: 0.8rem 2.4rem;
+}
+
+/* Question */
+#questions {
+  height: 14rem;
+  background-color: var(--ligth-blue);
+  border-radius: 0.4rem;
+  padding: 2.4rem;
+}
+
+#questions .question-content {
+  gap: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+#questions .actions {
+  justify-content: end;
+  gap: 2.4rem;
+}
+
+#questions .actions a {
+  gap: 0.8rem;
+}
+
+#questions .question-content,
+#questions .actions,
+#questions .actions a {
+  display: flex;
+  align-items: center;
 }
