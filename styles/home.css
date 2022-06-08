@@ -30,8 +30,7 @@ aside {
   width: 21.2rem;
   height: 21.2rem;
 
-  background-color: hsla(216, 100%, 60%, 0.1);
-  /* opacity: 0.1; */
+  background-color: var(--balls);
   clip-path: circle();
   position: fixed;
   z-index: -1;
@@ -60,11 +59,10 @@ main {
 
   display: flex;
   align-items: center;
-  margin-top: -12rem;
 }
 
 main .container {
-  width: min(36.3rem, 100%);
+  width: min(36.3rem, 94%);
 }
 
 main h2 {

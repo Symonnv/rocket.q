@@ -14,8 +14,10 @@
   --background: #fbfcff;
   --overlay: #040911;
   --icons-details: #a5b0c1;
+  --balls: hsla(216, 100%, 60%, 0.1);
   /* gray colors */
   --gray-dark: #4d5e77;
+  --gray-dark-opacity: hsla(216, 21%, 38%, 0.1);
   --gray-blue: #a1b2cd;
   --gray-medium: #d3d9e2;
   --gray-ligth: #e5eaf1;
@@ -28,6 +30,8 @@
 [data-theme="dark"] {
   --background: #161625;
   --black: var(--white);
+  --ligth-blue: hsla(217, 100%, 94%, 0.2);
+  --gray-dark: var(--gray-ligth);
 }
 
 html {
@@ -60,9 +64,11 @@ textarea {
 }
 
 header {
-  max-width: min(112rem, 84%);
+  width: 84%;
+  max-width: 112rem;
 
-  margin: 3.5rem auto 6.4rem auto;
+  margin-top: 3.5rem;
+  margin-inline: auto;
 
   display: flex;
   justify-content: space-between;
@@ -147,4 +153,15 @@ a.button {
   width: 2rem;
 
   margin-right: 1rem;
+}
+
+.button.red {
+  background-color: var(--red);
+  color: var(--white);
+  border: none;
+}
+
+.button.gray {
+  background-color: var(--gray-ligth);
+  color: var(--gray-dark);
 }

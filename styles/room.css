@@ -34,6 +34,7 @@
 main {
   max-width: min(112rem, 84%);
   margin-inline: auto;
+  margin-top: 6.4rem;
 }
 
 /* Question form */
@@ -89,16 +90,35 @@ main {
 }
 
 /* Question */
-#questions {
+.question-wrapper {
   height: 14rem;
   background-color: var(--ligth-blue);
-  border-radius: 0.4rem;
+  border-radius: 0 0.8rem 0.8rem 0.8rem;
   padding: 2.4rem;
+
+  margin-top: 0.8rem;
 }
 
 #questions .question-content {
   gap: 1.6rem;
   margin-bottom: 2rem;
+}
+
+.question-content .user {
+  background-color: var(--blue);
+  clip-path: circle();
+  padding: 1.2rem;
+}
+
+#questions .question-content .question {
+  color: var(--black);
+}
+
+#questions .question-content .question p {
+  word-wrap: break-word;
+  display: flex;
+  align-items: center;
+  min-height: 5.5rem;
 }
 
 #questions .actions {
@@ -108,6 +128,8 @@ main {
 
 #questions .actions a {
   gap: 0.8rem;
+  color: var(--gray-dark);
+  text-decoration: none;
 }
 
 #questions .question-content,
@@ -115,4 +137,14 @@ main {
 #questions .actions a {
   display: flex;
   align-items: center;
+}
+
+/* Question wrapper read */
+
+.question-wrapper.read {
+  background-color: var(--gray-dark-opacity);
+}
+
+.question-wrapper.read .question-content .user {
+  background-color: var(--gray-blue);
 }
