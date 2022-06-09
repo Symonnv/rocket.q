@@ -91,7 +91,7 @@ main {
 
 /* Question */
 .question-wrapper {
-  height: 14rem;
+  min-height: 14rem;
   background-color: var(--ligth-blue);
   border-radius: 0 0.8rem 0.8rem 0.8rem;
   padding: 2.4rem;
