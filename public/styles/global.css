@@ -150,7 +150,7 @@ a.button {
   color: var(--blue);
 }
 
-.button svg {
+.button img {
   width: 2rem;
 
   margin-right: 1rem;
