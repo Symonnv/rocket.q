@@ -20,6 +20,13 @@ function handleClick(event, check = true) {
   event.preventDefault();
   const text = check ? "Marcar como lida" : "Excluir";
 
+  const roomId = document.querySelector("#room-id").dataset.id;
+  const questionID = event.target.dataset.id;
+  const slug = check ? "check" : "delete";
+
+  const form = document.querySelector(".modal form");
+  form.setAttribute("action", `/room/${roomId}/${questionID}/${slug}`);
+
   modalTitle.innerHTML = `${text} esta pergunta`;
   modalDescription.innerHTML = `Tem certeza que você deseja ${text.toLocaleLowerCase()} esta pergunta?`;
   modalButton.innerHTML = `Sim, ${text.toLowerCase()}`;
