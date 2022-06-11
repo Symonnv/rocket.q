@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="images/icon.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/icon.svg" type="image/x-icon" />
     <!-- styles -->
-    <link rel="stylesheet" href="styles/theme-switch.css" />
-    <link rel="stylesheet" href="styles/global.css"/>
-    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="/styles/theme-switch.css" />
+    <link rel="stylesheet" href="/styles/global.css"/>
+    <link rel="stylesheet" href="/styles/home.css">
     <!-- scripts -->
-    <script src="scripts/theme-switch.js" defer></script>
+    <script src="/scripts/theme-switch.js" defer></script>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,10 +20,12 @@
   <body>
     <div id="home" class="content">
       <header>
-        <div class="logo">
-          <img src="images/logo.svg" alt="Logo da página">
-          rocket<span>.</span>q
-        </div>
+        <a href="/">
+          <div class="logo">
+            <img src="/images/logo.svg" alt="Logo da página">
+            rocket<span>.</span>q
+          </div>
+        </a>
         <div class="theme-switch-wrapper">
           <label class="theme-switch" for="checkbox">
           <input type="checkbox" id="checkbox" />
@@ -38,25 +40,8 @@
       </div>
       <main>
         <div class="container">
-          <section class="form-area">
-            <h2>Entre como participante</h2>
-            <form action="">
-              <label class="sr-only" for="room-id">Código da Sala</label>
-              <input type="number" id="room-id" placeholder="Código da Sala" />
-              <button class="button">
-                <img src="images/log-in.svg" alt="">
-                Entrar na Sala
-              </button>
-            </form>
-          </section>
-          <hr></hr>
-          <section class="create-room-area">
-            <h2>Crie sua própia sala de forma fácil</h2>
-            <a class="button" href="/create-pass" alt="Criar Sala">
-              <img src="images/users-blue.svg" alt="">
-              Criar sala
-            </a>
-          </section>
+          <!-- render the correct part as per the url -->
+          <%- include(`parts/${page}`) %>
         </div>
       </main>
     </div>
