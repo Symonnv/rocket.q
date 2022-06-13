@@ -6,28 +6,27 @@ module.exports = {
     const pass = req.body.password;
     let roomId;
     let isRoom = true;
-
     while (isRoom) {
-      // generate the room number
-      for (let index = 0; index < 6; index++) {
-        index == 0
+      // Generate the room number
+      for (var i = 0; i < 6; i++) {
+        i == 0
           ? (roomId = Math.floor(Math.random() * 10).toString())
           : (roomId += Math.floor(Math.random() * 10).toString());
       }
 
-      // check if the room number already exists
+      // Check if this number already exists
       const roomsExistIds = await db.all(`SELECT id FROM rooms`);
       isRoom = roomsExistIds.some(roomExistId => roomExistId === roomId);
 
-      if (!roomsExistIds) {
-        // insert the room into the database
+      if (!isRoom) {
+      // Insert the room in the bank
         await db.run(`INSERT INTO rooms (
-        id,
-        pass
-      ) VALUES (
-        ${Number(roomId)},
-        ${pass}
-      )`);
+                    id,
+                    pass
+                ) VAlUES (
+                    ${parseInt(roomId)},
+                    ${pass}
+                )`);
       }
     }
 
@@ -35,8 +34,35 @@ module.exports = {
 
     res.redirect(`/room/${roomId}`);
   },
-  open(req, res) {
+
+  async open(req, res) {
+    const db = await Database();
     const roomId = req.params.room;
-    res.render("room", { roomId: roomId });
+    const questions = await db.all(
+      `SELECT * FROM questions WHERE room = ${roomId} and read = 0`
+    );
+    const questionsRead = await db.all(
+      `SELECT * FROM questions WHERE room = ${roomId} and read = 1`
+    );
+    let isNoQuestions;
+
+    if (questions.length == 0) {
+      if (questionsRead.length == 0) {
+        isNoQuestions = true;
+      }
+    }
+
+    res.render("room", {
+      roomId: roomId,
+      questions: questions,
+      questionsRead: questionsRead,
+      isNoQuestions: isNoQuestions
+    });
+  },
+
+  enter(req, res) {
+    const roomId = req.body.roomId;
+
+    res.redirect(`/room/${roomId}`);
   }
 };
