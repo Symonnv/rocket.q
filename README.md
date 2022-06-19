@@ -19,4 +19,4 @@ This project was developed with the following technologies:
 - SQLite
 
 ## License
-This project is under [MIT LICENSE](.github/LICENSE.md).
+This project is under [MIT LICENSE]([.github/LICENSE.md](https://github.com/Symonnv/rocket.q/blob/main/LICENSE)).
